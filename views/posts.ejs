@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posts</title>
+    <title>All Posts | NodeJS & Redis Blog</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title-area">
+        <h1 class="posts-page-title">All Posts</h1>
+        <a href="">
+          <button class="btn-solid">+ Create Post</button>
+        </a>
+      </div>
+      <div class="post-grid">
+        <% allPosts.forEach(post => { %>
+        <a href="/posts/<%= post._id %>" class="post-card">
+          <h3 class="post-card-title"><%= post.postTitle %></h3>
+          <p class="post-cart-desc"><%= post.postDesc %></p>
+        </a>
+        <% }); %>
+      </div>
+    </div>
+  </body>
+</html>
